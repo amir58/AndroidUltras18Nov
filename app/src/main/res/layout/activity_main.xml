@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:id="@+id/et_email"
         android:layout_margin="10dp"
         android:hint="Email"
         android:drawablePadding="5dp"
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:id="@+id/et_password"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:layout_margin="10dp"
         android:drawablePadding="5dp"
@@ -45,6 +47,7 @@
         <com.google.android.material.button.MaterialButton
             app:cornerRadius="15dp"
             android:layout_margin="10dp"
+            android:onClick="login"
             android:padding="10dp"
             android:layout_weight="50"
             android:text="Login"
@@ -54,6 +57,7 @@
         <com.google.android.material.button.MaterialButton
             app:cornerRadius="15dp"
             android:layout_weight="50"
+            android:onClick="openRegister"
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="Register"
