@@ -51,6 +51,8 @@
             android:padding="10dp"
             android:layout_weight="50"
             android:text="Login"
+            android:backgroundTint="#023e8a"
+            android:textColor="#0077b6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
@@ -65,4 +67,11 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/android_thief"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

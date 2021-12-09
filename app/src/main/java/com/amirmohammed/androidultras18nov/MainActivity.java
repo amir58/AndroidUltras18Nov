@@ -1,11 +1,14 @@
 package com.amirmohammed.androidultras18nov;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+// OOP => Class, Object
+// OOP => Encapsulation, Inheritance, Polymorphism, Abstraction
 public class MainActivity extends AppCompatActivity {
 
     EditText editTextEmail;
@@ -18,6 +21,27 @@ public class MainActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.et_email);
         editTextPassword = findViewById(R.id.et_password);
+
+        // Object
+        // ClassName objectName = new ClassName();
+
+        Book bookOne = new Book(
+                "Android",
+                "100 L.E.",
+                "Google Developers",
+                "350",
+                "Programming"
+        );
+
+        Book bookTwo = new Book(
+                "iOS",
+                "250 L.E.",
+                "Apple Developers",
+                "500",
+                "Programming"
+        );
+
+
     }
 
     public void login(View view) {
