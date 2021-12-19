@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-     <!-- TextView, 2 EditText, Button -->
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+    <!-- TextView, 2 EditText, Button -->
 
     <TextView
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="10dp"
-        android:textSize="30sp"
-        android:text="Login screen"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Login screen"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_margin="10dp"
-        android:hint="Email"
-        android:drawablePadding="5dp"
-        android:drawableStart="@drawable/ic_baseline_email_24"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5dp"
+        android:hint="Email" />
 
     <EditText
         android:id="@+id/et_password"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:layout_margin="10dp"
-        android:drawablePadding="5dp"
         android:layout_width="match_parent"
-        android:hint="Password"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="5dp"
+        android:hint="Password" />
 
     <!-- weight , weightSum -->
     <LinearLayout
-        android:gravity="center"
-        android:weightSum="100"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="100">
 
         <com.google.android.material.button.MaterialButton
-            app:cornerRadius="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:layout_weight="50"
+            android:backgroundTint="#023e8a"
             android:onClick="login"
             android:padding="10dp"
-            android:layout_weight="50"
             android:text="Login"
-            android:backgroundTint="#023e8a"
             android:textColor="#0077b6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            app:cornerRadius="15dp" />
 
         <com.google.android.material.button.MaterialButton
-            app:cornerRadius="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="50"
             android:onClick="openRegister"
-            android:layout_margin="10dp"
             android:padding="10dp"
             android:text="Register"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            app:cornerRadius="15dp" />
 
     </LinearLayout>
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:src="@drawable/android_thief"
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:text="TEST"
+        android:id="@+id/btn_test"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_margin="10dp"
+        app:icon="@drawable/ic_baseline_email_24"
+        app:iconGravity="textStart"
+        app:cornerRadius="10dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/android_thief" />
 
 </LinearLayout>
