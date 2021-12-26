@@ -4,84 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/android_ios"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
     <!-- TextView, 2 EditText, Button -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="Login screen"
-        android:textSize="30sp" />
-
-    <EditText
-        android:id="@+id/et_email"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_call"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:drawableStart="@drawable/ic_baseline_email_24"
-        android:drawablePadding="5dp"
-        android:hint="Email" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="5dp"
-        android:hint="Password" />
-
-    <!-- weight , weightSum -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="100">
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="50"
-            android:backgroundTint="#023e8a"
-            android:onClick="login"
-            android:padding="10dp"
-            android:text="Login"
-            android:textColor="#0077b6"
-            app:cornerRadius="15dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="50"
-            android:onClick="openRegister"
-            android:padding="10dp"
-            android:text="Register"
-            app:cornerRadius="15dp" />
-
-    </LinearLayout>
+        android:elevation="2dp"
+        android:text="Call"
+        app:cornerRadius="10dp" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_share"
         android:layout_width="match_parent"
-        android:text="TEST"
-        android:id="@+id/btn_test"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_margin="10dp"
-        app:icon="@drawable/ic_baseline_email_24"
-        app:iconGravity="textStart"
+        android:elevation="2dp"
+        android:text="Share"
+        app:cornerRadius="10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_pick_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="2dp"
+        android:text="Pick image"
         app:cornerRadius="10dp" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/iv_main"
         android:scaleType="fitXY"
-        android:src="@drawable/android_thief" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

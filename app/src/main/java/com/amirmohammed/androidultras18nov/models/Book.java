@@ -3,7 +3,9 @@ package com.amirmohammed.androidultras18nov.models;
 // Access Modifiers => public , private , protected, package private
 // Non access modifiers => final , static , abstract
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
 
     // Global Variables
     private String bookName;
@@ -73,7 +75,7 @@ public class Book {
         printBookData();
     }
 
-    public Book(){
+    public Book() {
 
     }
 
@@ -92,7 +94,7 @@ public class Book {
         this.bookCategory = bookCategory;
     }
 
-    void printBookData() {
+    public void printBookData() {
         System.out.println(bookName);
         System.out.println(bookPrice);
         System.out.println(bookAuthor);
@@ -100,4 +102,14 @@ public class Book {
         System.out.println(bookCategory);
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", bookPrice=" + bookPrice +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", bookPagesCount='" + bookPagesCount + '\'' +
+                ", bookCategory='" + bookCategory + '\'' +
+                '}';
+    }
 }
