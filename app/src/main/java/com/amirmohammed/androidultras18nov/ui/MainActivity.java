@@ -19,7 +19,8 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Main";
-    MaterialButton materialButtonCall, materialButtonShare, materialButtonPickImage;
+    MaterialButton materialButtonCall, materialButtonShare, materialButtonPickImage,
+            materialButtonAddress, materialButtonMenus;
     ImageView imageView;
 
     @Override
@@ -30,12 +31,29 @@ public class MainActivity extends AppCompatActivity {
         materialButtonCall = findViewById(R.id.btn_call);
         materialButtonShare = findViewById(R.id.btn_share);
         materialButtonPickImage = findViewById(R.id.btn_pick_image);
+        materialButtonAddress = findViewById(R.id.btn_address);
+        materialButtonMenus = findViewById(R.id.btn_menus);
         imageView = findViewById(R.id.iv_main);
 
         materialButtonCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 call();
+            }
+        });
+
+        materialButtonAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectAddress();
+            }
+        });
+
+        materialButtonMenus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MenusActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -46,12 +64,25 @@ public class MainActivity extends AppCompatActivity {
         getIntentData();
     }
 
+    private void selectAddress() {
+        Intent intent = new Intent(MainActivity.this, SelectAddressActivity.class);
+        startActivityForResult(intent, 2);
+    }
+
     private void pickImage() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_PICK);
         intent.setType("image/*");
 
         startActivityForResult(intent, 1);
+    }
+
+    void shareImage(Uri uriToImage) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);
+        shareIntent.setType("image/*");
+        startActivity(Intent.createChooser(shareIntent, null));
     }
 
     @Override
@@ -61,9 +92,14 @@ public class MainActivity extends AppCompatActivity {
             Uri uri = data.getData();
             Log.i(TAG, "onActivityResult: " + uri);
             imageView.setImageURI(uri);
-        }
-        else if (requestCode == 1 && resultCode == RESULT_CANCELED){
+            shareImage(uri);
+        } else if (requestCode == 1 && resultCode == RESULT_CANCELED) {
             Toast.makeText(MainActivity.this, "No image selected!", Toast.LENGTH_SHORT).show();
+        }
+        else if(requestCode == 2 && resultCode == RESULT_OK&& data != null){
+            String address = data.getStringExtra("address");
+            Log.i(TAG, "onActivityResult: " + address);
+            materialButtonAddress.setText(address);
         }
     }
 

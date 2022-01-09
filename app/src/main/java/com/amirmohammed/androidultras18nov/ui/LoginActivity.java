@@ -3,6 +3,7 @@ package com.amirmohammed.androidultras18nov.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -79,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
 
     public void openRegister(View view) {
 //        Toast.makeText(LoginActivity.this, "Soon", Toast.LENGTH_SHORT).show();

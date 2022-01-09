@@ -28,6 +28,26 @@
         app:cornerRadius="10dp" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="2dp"
+        android:text="Select address"
+        app:cornerRadius="10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_menus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="2dp"
+        android:text="Menus"
+        app:cornerRadius="10dp" />
+
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_pick_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
