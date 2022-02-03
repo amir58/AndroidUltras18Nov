@@ -10,6 +10,16 @@
     <!-- TextView, 2 EditText, Button -->
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_alert_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="showAlertDialog"
+        android:elevation="2dp"
+        android:text="Alert dialog"
+        app:cornerRadius="10dp" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_call"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,6 +64,15 @@
         android:layout_margin="10dp"
         android:elevation="2dp"
         android:text="Pick image"
+        app:cornerRadius="10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_share_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="2dp"
+        android:text="Share image"
         app:cornerRadius="10dp" />
 
     <ImageView

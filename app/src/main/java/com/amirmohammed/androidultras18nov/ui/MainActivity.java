@@ -3,6 +3,8 @@ package com.amirmohammed.androidultras18nov.ui;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ import com.google.android.material.button.MaterialButton;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Main";
     MaterialButton materialButtonCall, materialButtonShare, materialButtonPickImage,
-            materialButtonAddress, materialButtonMenus;
+            materialButtonAddress, materialButtonMenus, materialButtonShareImage;
     ImageView imageView;
 
     @Override
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         materialButtonShare = findViewById(R.id.btn_share);
         materialButtonPickImage = findViewById(R.id.btn_pick_image);
         materialButtonAddress = findViewById(R.id.btn_address);
+        materialButtonShareImage = findViewById(R.id.btn_share_image);
         materialButtonMenus = findViewById(R.id.btn_menus);
         imageView = findViewById(R.id.iv_main);
 
@@ -61,6 +64,17 @@ public class MainActivity extends AppCompatActivity {
 
         materialButtonPickImage.setOnClickListener(v -> pickImage());
 
+        materialButtonShareImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+                shareIntent.setType("image/*");
+                startActivity(Intent.createChooser(shareIntent, null));
+            }
+        });
+
         getIntentData();
     }
 
@@ -77,26 +91,18 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 1);
     }
 
-    void shareImage(Uri uriToImage) {
-        Intent shareIntent = new Intent();
-        shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);
-        shareIntent.setType("image/*");
-        startActivity(Intent.createChooser(shareIntent, null));
-    }
+    Uri uri;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
+            this.uri = data.getData();
             Log.i(TAG, "onActivityResult: " + uri);
             imageView.setImageURI(uri);
-            shareImage(uri);
         } else if (requestCode == 1 && resultCode == RESULT_CANCELED) {
             Toast.makeText(MainActivity.this, "No image selected!", Toast.LENGTH_SHORT).show();
-        }
-        else if(requestCode == 2 && resultCode == RESULT_OK&& data != null){
+        } else if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             String address = data.getStringExtra("address");
             Log.i(TAG, "onActivityResult: " + address);
             materialButtonAddress.setText(address);
@@ -131,6 +137,22 @@ public class MainActivity extends AppCompatActivity {
 
         Intent shareIntent = Intent.createChooser(sendIntent, null);
         startActivity(shareIntent);
+    }
+
+    public void showAlertDialog(View view) {
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Alert")
+                .setMessage("Are you sure to delete this item ?")
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "Item deleted!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .setCancelable(false)
+                .show();
     }
 
 }
