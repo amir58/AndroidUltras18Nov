@@ -7,7 +7,9 @@ import android.os.Bundle;
 
 import com.amirmohammed.androidultras18nov.R;
 import com.amirmohammed.androidultras18nov.adapters.OurNamesAdapter;
+import com.amirmohammed.androidultras18nov.models.CoffeeModel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 // RecyclerView => 3
@@ -34,6 +36,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.rv_our_names);
         recyclerView.setAdapter(adapter);
     }
+
 
     private void insertNames(){
         ourNames.add("Amir");

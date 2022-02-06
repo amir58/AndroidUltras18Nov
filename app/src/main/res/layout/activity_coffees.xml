@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CoffeesActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_2sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_18ssp"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:textColor="@color/black"
+            android:text="Total price : 0 EGP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_coffees"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/item_coffee"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

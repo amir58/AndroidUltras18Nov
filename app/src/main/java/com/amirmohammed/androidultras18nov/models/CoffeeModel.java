@@ -2,7 +2,7 @@ package com.amirmohammed.androidultras18nov.models;
 
 public class CoffeeModel {
     private String name;
-    private int price;
+    private double price;
     public int quantity = 0;
     private String imageUrl;
 
@@ -20,11 +20,11 @@ public class CoffeeModel {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

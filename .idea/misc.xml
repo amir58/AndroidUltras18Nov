@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/android_thief.xml" value="0.28055555555555556" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.31846153846153846" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_coffees.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3072916666666667" />
         <entry key="app/src/main/res/layout/activity_menus.xml" value="0.3098958333333333" />
@@ -14,6 +15,7 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.46484375" />
         <entry key="app/src/main/res/layout/activity_select_address.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_coffe_model.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_coffee.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/layout/item_name.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/context_menu.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/optional_menu.xml" value="0.3098958333333333" />

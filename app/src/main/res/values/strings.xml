@@ -8,7 +8,7 @@
     <string name="confirm_password">Confirm password</string>
     <string name="register">Register</string>
     <string name="course_name">Android</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

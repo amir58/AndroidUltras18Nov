@@ -64,5 +64,4 @@ public class OurNamesAdapter extends RecyclerView.Adapter<OurNamesAdapter.OurNam
         }
     }
 
-
 }
