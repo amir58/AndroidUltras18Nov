@@ -1,0 +1,32 @@
+Api => json <=
+
+json => object , array
+
+array => [ ]
+
+[ {}, {}, {}, {} ]
+
+object => {  }
+
+{
+    dataTypes => int, String, boolean, double, List, ArrayList
+}
+
+example
+
+[ {String news1}, {String news1}, {String news3}  ]
+
+example
+
+{
+    "cities":[ {}, {}, {}, {}],
+    "neighbourhoods" : [ {}, {}, {}, {} ]
+}
+
+APP_ID
+
+appId
+
+
+@SerializedName("APP_ID")
+private String appId;

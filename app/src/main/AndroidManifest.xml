@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.amirmohammed.androidultras18nov">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUltras18Nov">
+        <activity
+            android:name=".ui.CoffeesActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.RecyclerViewActivity"
             android:exported="false" />
@@ -41,7 +44,7 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CoffeesActivity"
+            android:name=".ui.news.NewsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
