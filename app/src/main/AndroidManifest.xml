@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUltras18Nov">
         <activity
+            android:name=".ui.news.NewsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.CoffeesActivity"
             android:exported="false" />
         <activity
@@ -44,7 +47,7 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.news.NewsActivity"
+            android:name=".e.ui.ActivityE"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
